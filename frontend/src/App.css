@@ -1,6 +1,22 @@
+:root {
+  --text: "Raleway", sans-serif;
+  --title: "Gilda Display", serif;
+
+  --rouge: #db222a;
+  --bleu: #053C5E;
+  --bleu-clair: #1F7A8C;
+  --gris: #CDD3D5;
+
+  --transition: all .3s ease-in-out;
+}
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+
 
 html,
 body {
@@ -9,7 +25,170 @@ body {
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--text);
   background-color: #f5f5f5;
+}
+
+main {
+  margin: 3rem 5rem;
+
+  @media (max-width: 999.98px) {
+    margin: 2rem 12px ;
+    
+  }
+}
+
+.header {
+  margin: 2rem;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 3rem;
+  background-color: var(--);
+  background-color: var(--bleu);
+  border-radius: 10px;
+  width: fit-content;
+
+  a {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+    font-family: var(--text);
+    transition: var(--transition);
+    color: white;
+    font-size: clamp(1.125rem, 1.1943rem + 0.2548vw, 1.25rem);
+    font-weight: 400;
+
+    &:hover, &:focus {
+      text-decoration-color: currentColor;
+    }
+
+    @media (max-width: 999.98px) {
+      svg {
+        display: none;
+      }
+    }
+
+    path {
+      fill: currentColor;
+      transition: var(--transition);
+    }
+  }}
+
+.title-h1 {
+  font-family: var(--title);
+  font-size: clamp(2rem, 2.5rem + 1.25vw, 3rem);
+  color: var(--bleu);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+
+  .card {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    width: 300px;
+    transition: var(--transition);
+
+    &:hover, &:focus {
+      background-color: var(--rouge);
+      box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+
+      a {
+        color: white;
+      }
+    }
+    
+    a {
+      text-decoration: none;
+      color: var(--rouge);
+      padding: 1rem;
+      display: grid;
+      gap: .5rem;
+      justify-items: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      transition: var(--transition);
+    }
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  border: solid 1px var(--bleu-clair);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px var(--gris);
+
+  @media (max-width: 999.98px) {
+    display: grid;
+    place-content: normal;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  label {
+    display: grid;
+    gap: .5rem;
+    font-family: var(--text);
+    font-size: clamp(1rem, 1.1943rem + 0.2548vw, 1.125rem);
+    font-weight: 600;
+    color: var(--bleu);
+    width: 100%;
+
+    input {
+      padding: .5rem;
+      border: solid 1px var(--bleu-clair);
+      font-size: 1rem;
+      border-radius: 10px;
+      font-family: var(--text);
+      width: 100%;
+    }
+  }
+
+  button {
+    background-color: var(--rouge);
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    font-family: var(--text);
+    font-size: clamp(1rem, 1.1943rem + 0.2548vw, 1.125rem);
+    font-weight: 600;
+    border: none;
+    color: white;
+    place-self: center;
+    transition: var(--transition);
+
+    &:hover, &:focus {
+      background-color: var(--bleu);
+      box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+      cursor: pointer;
+    }
+  }
+}
+
+.detail-card {
+  display: grid;
+  gap: 2rem;
+  font-size: 1.125rem;
+  justify-items: center;
+
+  b {
+    font-weight: 600;
+    color: var(--bleu);
+    font-family: var(--title);
+  }
 }
